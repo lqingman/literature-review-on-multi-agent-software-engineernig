@@ -16,6 +16,49 @@ This repository contains all research artifacts for the CS 7980 capstone literat
 
 ---
 
+## Assignment Guidelines (Reference)
+
+The following steps from the assignment specification are reproduced here as a checklist and guide for the writing phase.
+
+### Step 3 — Organize Your Findings
+
+Create a system to manage your references. For each paper, track:
+
+| Field | Where it lives in this repo |
+|-------|-----------------------------|
+| Paper title, authors, year, venue | `paper_summaries.md` — header table per paper; `filtered_papers.md` — final selection table |
+| Main contribution | `paper_summaries.md` — "Main Contribution" section per paper |
+| Methods used | `paper_summaries.md` — "Methods Used" section per paper |
+| Results/findings | `paper_summaries.md` — "Results / Findings" section per paper |
+| Limitations | `paper_summaries.md` — "Limitations" section per paper |
+| How it relates to your work | `paper_summaries.md` — "How It Relates to Your Work" section per paper |
+
+> **Reference management:** BibTeX keys are defined for all 15 selected papers in `paper_summaries.md` (format: `AuthorYEARkeyword`, e.g., `Hong2023metagpt`). Export to Zotero or Mendeley using the DOIs listed in `filtered_papers.md`.
+
+### Step 4 — Read Critically
+
+When reading each paper, ask:
+
+- **What problem does this paper solve?** → Answered in "Main Contribution" and "Critical Analysis — Problem solved" in `paper_summaries.md`
+- **What are the key assumptions?** → Answered in "Critical Analysis — Key assumptions"
+- **How does this approach compare to others?** → Answered in "Critical Analysis — Comparison to others"
+- **What are the strengths and weaknesses?** → Answered in "Critical Analysis — Strengths / Weaknesses"
+- **What questions remain unanswered?** → Answered in "Critical Analysis — Open questions"
+
+> **Reading strategy applied:** All 15 papers were processed using the abstract-introduction-conclusion pass first. 7 papers were read in full PDF (see `data/` directory). The remaining 8 were analyzed at abstract depth and flagged as sufficient for the 2-page review scope.
+
+### Step 5 — Synthesize, Don't Summarize
+
+A good literature review tells a story about the evolution and current state of the research area:
+
+- **Group papers by themes:** Done — see "Suggested Review Structure" below and section headers in `filtered_papers.md` (Survey / Framework / Challenges / Evaluation / Vision)
+- **Identify trends and patterns:** Key findings section below identifies 5 cross-cutting patterns
+- **Highlight agreements and disagreements:** The MetaGPT vs. ChatDev coordination paradigm contrast and the MetaGPT vs. Agentless complexity debate are the two central disagreements in the literature
+- **Point out gaps and open problems:** Han et al. 2024 and Yehudai et al. 2025 anchor the gaps section; Hassan et al. 2025 frames the forward-looking agenda
+- **Connect the literature to your proposed work:** To be completed in the final write-up using the thematic mapping in the "Suggested Review Structure" section
+
+---
+
 ## Repository Structure
 
 ```
