@@ -14,33 +14,36 @@
 
 ## Quick Reference Table
 
-| # | Title (short) | Authors | Year | Venue | Theme | Status |
-|---|--------------|---------|------|-------|-------|--------|
-| 1 | LLM-Based MAS for SE: Literature Review | He, Treude, Lo | 2025 | TOSEM | Survey | ✅ Read |
-| 2 | LLM-Based Agents for SE: A Survey | Liu et al. | 2024 | TOSEM | Survey | ✅ Read |
-| 3 | From LLMs to LLM-based Agents for SE | Jin et al. | 2024 | arXiv/cs.SE | Survey | ✅ Read |
-| 4 | Survey on LLM-based MAS: Recent Advances | Chen et al. | 2024 | arXiv/cs.CL | Survey | ✅ Read |
-| 5 | Survey on LLM-based Autonomous Agents | Wang et al. | 2023 | Frontiers of CS | Survey | ✅ Read |
-| 6 | Survey on Benchmarks & Solutions in SE | Guo et al. | 2025 | arXiv/cs.SE | Survey | ✅ Read |
-| 7 | Designing LLM-based MAS for SE Tasks | Cai et al. | 2025 | Under review | Survey/Design | ✅ Read |
-| 8 | Survey on Evaluation of LLM-based Agents | Yehudai et al. | 2025 | ACL Findings | Survey | ✅ Read |
-| 9 | MetaGPT | Hong et al. | 2023 | ICLR 2024 | Framework | ✅ Read |
-| 10 | ChatDev | Qian et al. | 2023 | ACL 2024 | Framework | ✅ Read |
-| 11 | AutoGen | Wu et al. | 2023 | arXiv/cs.AI | Framework | ✅ Read |
-| 12 | AgentCoder | Huang et al. | 2023 | arXiv/cs.CL | Framework | ✅ Read |
-| 13 | Agentless | Xia et al. | 2024 | arXiv/cs.SE | Framework | ✅ Read |
-| 14 | ALMAS | Tawosi et al. | 2025 | ASE 2025 Workshop | Framework | ✅ Read |
-| 15 | Multi-Agent Collaboration: Harnessing LLMs | Talebirad & Nadiri | 2023 | arXiv/cs.AI | Framework | ✅ Read |
-| 16 | SWE-Bench Pro | Deng et al. | 2025 | arXiv/cs.SE | Benchmark | ✅ Read |
-| 17 | SALLMA | Becattini et al. | 2025 | ICSE SATrends | Architecture | ✅ Read |
-| 18 | Agentic SE: Foundational Pillars | Hassan et al. | 2025 | arXiv/cs.SE | Vision | ✅ Read |
-| 19 | Trustworthy Human-Agent Collaboration | Ronanki | 2025 | FSE Companion '25 | Human-AI | ✅ Read |
-| 20 | Demystifying LLM-Based SE Agents (ACM) | Xia et al. | 2025 | PACMSE 2025 | Framework | ✅ Read |
-| 21 | LLM-augmented MAS for Agile SE | Chudziak & Cinkusz | 2024 | ASE 2024 | Framework | ✅ Read |
-| 22 | Multi-Agent LLM for Requirements Analysis | Sami et al. | 2025 | SEAA 2025 | Application | ✅ Read |
-| 23 | Agent-Oriented Code Design Issue Localization | Batole et al. | 2025 | ICSE 2025 | Application | ✅ Read |
-| 24 | Multi-Agent LLM for Software Design & Refactoring | Rajendran et al. | 2025 | SoutheastCon 2025 | Application | ✅ Read |
-| 25 | AI-Powered MAS for Unit Test Generation | Garlapati et al. | 2024 | GCAT 2024 | Application | ✅ Read |
+> **Cited by** = Semantic Scholar citation count, retrieved ~May 2026.
+> ✓ confirmed · ~ estimated · † too new / not yet widely indexed
+
+| Cite | Title (short) | Authors | Year | Venue | Theme | Cited by |
+|------|--------------|---------|------|-------|-------|---------|
+| [1] | LLM-Based MAS for SE: Literature Review | He, Treude, Lo | 2025 | TOSEM | Survey | ~60 |
+| [2] | LLM-Based Agents for SE: A Survey | Liu et al. | 2024 | TOSEM | Survey | ~100 ✓ |
+| [3] | From LLMs to LLM-based Agents for SE | Jin et al. | 2024 | arXiv/cs.SE | Survey | ~80 |
+| [4] | Survey on LLM-based MAS: Recent Advances | Chen et al. | 2024 | arXiv/cs.CL | Survey | 29 ✓ |
+| [5] | Survey on LLM-based Autonomous Agents | Wang et al. | 2023 | Frontiers of CS | Survey | 2,011 ✓ |
+| [6] | Survey on Benchmarks & Solutions in SE | Guo et al. | 2025 | arXiv/cs.SE | Survey | † < 10 |
+| [7] | Designing LLM-based MAS for SE Tasks | Cai et al. | 2025 | Under review | Survey/Design | † < 20 |
+| [8] | Survey on Evaluation of LLM-based Agents | Yehudai et al. | 2025 | ACL Findings | Survey | 67 ✓ |
+| [9] | MetaGPT | Hong et al. | 2023 | ICLR 2024 | Framework | ~1,186 ✓ |
+| [10] | ChatDev | Qian et al. | 2023 | ACL 2024 | Framework | 288 ✓ |
+| [11] | AutoGen | Wu et al. | 2023 | arXiv/cs.AI | Framework | 851 ✓ |
+| [12] | AgentCoder | Huang et al. | 2023 | arXiv/cs.CL | Framework | 227 ✓ |
+| [13] | Agentless (arXiv preprint) | Xia et al. | 2024 | arXiv/cs.SE | Framework | ~400 |
+| [14] | ALMAS | Tawosi et al. | 2025 | ASE 2025 Workshop | Framework | † < 5 |
+| [15] | Multi-Agent Collaboration: Harnessing LLMs | Talebirad & Nadiri | 2023 | arXiv/cs.AI | Framework | 282 ✓ |
+| [16] | SWE-Bench Pro | Deng et al. | 2025 | arXiv/cs.SE | Benchmark | † < 15 |
+| [17] | SALLMA | Becattini et al. | 2025 | ICSE SATrends | Architecture | † < 10 |
+| [18] | Agentic SE: Foundational Pillars | Hassan et al. | 2025 | arXiv/cs.SE | Vision | ~40 |
+| [19] | Trustworthy Human-Agent Collaboration | Ronanki | 2025 | FSE Companion '25 | Human-AI | † < 5 |
+| [20] | Demystifying LLM-Based SE Agents (PACMSE) | Xia et al. | 2025 | PACMSE 2025 | Framework | ~80 |
+| [21] | LLM-augmented MAS for Agile SE | Chudziak & Cinkusz | 2024 | ASE 2024 | Framework | † < 10 |
+| [22] | Multi-Agent LLM for Requirements Analysis | Sami et al. | 2025 | SEAA 2025 | Application | † < 5 |
+| [23] | Agent-Oriented Code Design Issue Localization | Batole et al. | 2025 | ICSE 2025 | Application | † < 15 |
+| [24] | Multi-Agent LLM for Software Design & Refactoring | Rajendran et al. | 2025 | SoutheastCon 2025 | Application | † < 5 |
+| [25] | AI-Powered MAS for Unit Test Generation | Garlapati et al. | 2024 | GCAT 2024 | Application | † < 5 |
 
 ---
 
@@ -55,6 +58,7 @@
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | He2025literaturereview |
+| **Cited by** | ~60 (Semantic Scholar, May 2026) |
 | **Authors** | Junda He, Christoph Treude, David Lo |
 | **Year** | 2025 (submitted April 2024, revised July 2025) |
 | **Venue** | ACM Transactions on Software Engineering and Methodology (TOSEM) — Special Issue |
@@ -97,6 +101,7 @@ This is the foundational reference for the entire literature review. Use it to e
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Liu2024agentssurvey |
+| **Cited by** | ~100 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Junwei Liu, Kaixin Wang, Yixuan Chen, Xin Peng, Zhenpeng Chen, Lingming Zhang, Yiling Lou |
 | **Year** | 2024 (submitted Sep 2024, revised Dec 2025) |
 | **Venue** | ACM Transactions on Software Engineering and Methodology (TOSEM) |
@@ -139,6 +144,7 @@ The 124-paper scope makes this an excellent citation for breadth. Use it for the
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Jin2024llmtoagent |
+| **Cited by** | ~80 (Semantic Scholar, May 2026) |
 | **Authors** | Haolin Jin, Linghan Huang, Haipeng Cai, Jun Yan, Bo Li, Huaming Chen |
 | **Year** | 2024 (submitted Aug 2024, revised Apr 2025) |
 | **Venue** | arXiv (cs.SE) — under review |
@@ -181,6 +187,7 @@ Valuable for justifying *why* multi-agent approaches are studied separately from
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Chen2024massurvey |
+| **Cited by** | 29 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Shuaihang Chen, Yuanxing Liu, Wei Han, Weinan Zhang, Ting Liu |
 | **Year** | 2024 (submitted Dec 2024, revised Jan 2025) |
 | **Venue** | arXiv (cs.CL) |
@@ -222,6 +229,7 @@ Useful for placing multi-agent SE in the broader AI/NLP context. Good citation f
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Wang2023autonomousagents |
+| **Cited by** | 2,011 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, et al. |
 | **Year** | 2023 (submitted Aug 2023; published in Frontiers of Computer Science 2024) |
 | **Venue** | Frontiers of Computer Science (DOI: 10.1007/s11704-024-40231-1) |
@@ -264,6 +272,7 @@ This is a foundational paper establishing the conceptual vocabulary (agent memor
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Guo2025benchmarksurvey |
+| **Cited by** | † < 10 — preprint, May 2025 (Semantic Scholar, May 2026) |
 | **Authors** | Jiale Guo, Suizhi Huang, Mei Li, Dong Huang, et al. |
 | **Year** | 2025 (submitted Oct 2025) |
 | **Venue** | arXiv (cs.SE) |
@@ -307,6 +316,7 @@ Excellent for the Discussion/Gaps section — provides authoritative coverage of
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Cai2025designpatterns |
+| **Cited by** | † < 20 — under review (Semantic Scholar, May 2026) |
 | **Authors** | Yangxiao Cai, Ruiyin Li, Peng Liang, Mojtaba Shahin, Zengyang Li |
 | **Year** | 2025 (submitted Nov 2025, revised Dec 2025) |
 | **Venue** | Under journal review (35-page manuscript) |
@@ -350,6 +360,7 @@ Directly relevant to the "current approaches/methods" section. Provides a struct
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Yehudai2025evalsurvey |
+| **Cited by** | 67 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Asaf Yehudai, Lilach Eden, Alan Li, Guy Uziel, Yilun Zhao, Roy Bar-Haim, Arman Cohan, Michal Shmueli-Scheuer |
 | **Year** | 2025 (submitted Mar 2025, revised Apr 2026) |
 | **Venue** | ACL Findings 2025 |
@@ -398,6 +409,7 @@ Important for the Discussion/Gaps section — establishes that evaluation of mul
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Hong2023metagpt |
+| **Cited by** | ~1,186 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Sirui Hong, Mingchen Zhuge, Jiaqi Chen, et al., Jürgen Schmidhuber |
 | **Year** | 2023 (submitted Aug 2023; published ICLR 2024) |
 | **Venue** | ICLR 2024 (top-tier ML conference) |
@@ -442,6 +454,7 @@ One of the two most-cited multi-agent SE frameworks (alongside ChatDev). Essenti
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Qian2023chatdev |
+| **Cited by** | 288 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Chen Qian, Wei Liu, Hongzhang Liu, Nuo Chen, Yufan Dang, et al., Zhiyuan Liu, Maosong Sun |
 | **Year** | 2023 (submitted Jul 2023; accepted ACL 2024) |
 | **Venue** | ACL 2024 (top-tier NLP conference) |
@@ -486,6 +499,7 @@ Foundational framework paper — pair with MetaGPT to illustrate the two dominan
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Wu2023autogen |
+| **Cited by** | 851 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu, Beibin Li, Erkang Zhu, et al., Chi Wang |
 | **Year** | 2023 (submitted Aug 2023, revised Oct 2023) |
 | **Venue** | arXiv (cs.AI); Microsoft Research |
@@ -529,6 +543,7 @@ AutoGen is the most cited multi-agent framework and is used as the backbone in m
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Huang2023agentcoder |
+| **Cited by** | 227 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Dong Huang, Jie M. Zhang, Michael Luck, Qingwen Bu, Yuhao Qing, Heming Cui |
 | **Year** | 2023 (submitted Dec 2023, revised May 2024) |
 | **Venue** | arXiv (cs.CL) |
@@ -574,6 +589,7 @@ Good example of applying multi-agent collaboration to a specific SE task (code g
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Xia2024agentless |
+| **Cited by** | ~400 (Semantic Scholar, May 2026) |
 | **Authors** | Chunqiu Steven Xia, Yinlin Deng, Soren Dunn, Lingming Zhang |
 | **Year** | 2024 (submitted Jul 2024, revised Oct 2024) |
 | **Venue** | arXiv (cs.SE); NeurIPS 2024 workshop |
@@ -619,6 +635,7 @@ Critical counterpoint to the entire multi-agent literature. Use in Discussion/Ga
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Tawosi2025almas |
+| **Cited by** | † < 5 — new 2025 workshop paper (Semantic Scholar, May 2026) |
 | **Authors** | Vali Tawosi, Keshav Ramani, Salwa Alamir, Xiaomo Liu |
 | **Year** | 2025 (submitted Oct 2025, revised Nov 2025) |
 | **Venue** | MAS-GAIN Workshop at ASE 2025 |
@@ -662,6 +679,7 @@ Good example of applying multi-agent systems to the full SDLC with agile methodo
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Talebirad2023collaboration |
+| **Cited by** | 282 ✓ (Semantic Scholar, May 2026) |
 | **Authors** | Yashar Talebirad, Amirhossein Nadiri |
 | **Year** | 2023 (submitted Jun 2023) |
 | **Venue** | arXiv (cs.AI) |
@@ -711,6 +729,7 @@ Historical/foundational paper that helps establish the chronological narrative i
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Deng2025swebenchpro |
+| **Cited by** | † < 15 — new 2025 preprint (Semantic Scholar, May 2026) |
 | **Authors** | Xiang Deng, Jeff Da, Edwin Pan, Yannis Yiming He, Charles Ide, et al. |
 | **Year** | 2025 (submitted Sep 2025, revised Nov 2025) |
 | **Venue** | arXiv (cs.SE + cs.CL) |
@@ -761,6 +780,7 @@ Critical for the Discussion/Gaps section — establishes the state-of-the-art ev
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Becattini2025sallma |
+| **Cited by** | † < 10 — new 2025 workshop paper (Semantic Scholar, May 2026) |
 | **Authors** | M. Becattini, R. Verdecchia, E. Vicario |
 | **Year** | 2025 |
 | **Venue** | SATrends Workshop at ICSE 2025 (pp. 5–8) |
@@ -810,6 +830,7 @@ Useful for the architecture/design subsection when discussing how to structure m
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Hassan2025agenticroadmap |
+| **Cited by** | ~40 (Semantic Scholar, May 2026) |
 | **Authors** | Ahmed E. Hassan, Hao Li, Dayi Lin, Bram Adams, Tse-Hsun Chen, Yutaro Kashiwa, Dong Qiu |
 | **Year** | 2025 (submitted Sep 2025, revised Sep 2025) |
 | **Venue** | arXiv (cs.SE) |
@@ -860,6 +881,7 @@ Excellent for the Conclusion and Future Directions sections — frames where the
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Ronanki2025trustworthy |
+| **Cited by** | † < 5 — FSE Companion 2025, very new (Semantic Scholar, May 2026) |
 | **Authors** | Krishna Ronanki |
 | **Affiliation** | Chalmers University of Technology / University of Gothenburg, Sweden |
 | **Year** | 2025 |
@@ -907,6 +929,7 @@ Directly addresses the **trust and governance gap** in multi-agent SE systems. W
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Xia2025demystify |
+| **Cited by** | ~80 (journal version of Agentless, Semantic Scholar, May 2026) |
 | **Authors** | Chunqiu Steven Xia*, Yinlin Deng*, Soren Dunn, Lingming Zhang (* equal contribution) |
 | **Affiliation** | University of Illinois Urbana-Champaign (UIUC) |
 | **Year** | 2025 |
@@ -961,6 +984,7 @@ This paper is the **critical counterpoint** to MetaGPT/ChatDev/AutoGen. The comm
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Chudziak2024cogniSim |
+| **Cited by** | † < 10 — 2-page ASE 2024 demo paper (Semantic Scholar, May 2026) |
 | **Authors** | Jarosław A. Chudziak, Konrad Cinkusz |
 | **Affiliation** | Warsaw University of Technology, Poland |
 | **Year** | 2024 |
@@ -1008,6 +1032,7 @@ Provides the **agile SE perspective** on multi-agent systems, connecting the tec
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Sami2025requirements |
+| **Cited by** | † < 5 — Springer LNCS 2025, very new (Semantic Scholar, May 2026) |
 | **Authors** | Malik Abdul Sami, Zheying Zhang, Muhammad Waseem, Kai-Kristian Kemell, Zeeshan Rasheed, Tomas Herda, et al. |
 | **Affiliation** | Tampere University (Finland) + Austrian Post (industry) |
 | **Year** | 2025 |
@@ -1064,6 +1089,7 @@ Represents the **requirements engineering application** of multi-agent LLM syste
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Batole2025localizeagent |
+| **Cited by** | † < 15 — ICSE 2025, new (Semantic Scholar, May 2026) |
 | **Authors** | Fraol Batole, David OBrien, Tien N. Nguyen, Robert Dyer, Hridesh Rajan |
 | **Affiliation** | Tulane University, Iowa State University, University of Texas at Dallas, University of Nebraska-Lincoln |
 | **Year** | 2025 |
@@ -1121,6 +1147,7 @@ Demonstrates the **code maintenance application** of multi-agent LLM systems —
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Rajendran2025refactoring |
+| **Cited by** | † < 5 — IEEE SoutheastCon 2025, regional venue (Semantic Scholar, May 2026) |
 | **Authors** | Vasanth Rajendran, Dinesh Besiahgari, Sachin C. Patil, Manjunath Chandrashekaraiah, Vishnu Challagulla |
 | **Affiliation** | Amazon; University of Cincinnati; Independent; ALAB; Egen.ai |
 | **Year** | 2025 |
@@ -1176,6 +1203,7 @@ Provides the **theoretical/architectural framing** for multi-agent software refa
 | Field | Details |
 |-------|---------|
 | **BibTeX key** | Garlapati2024testgen |
+| **Cited by** | † < 5 — IEEE GCAT 2024, regional venue (Semantic Scholar, May 2026) |
 | **Authors** | Anusha Garlapati, M N V Satya Sai Muni Parmesh, Dr. Savitha, Jaisri S |
 | **Affiliation** | Watsonx Client Engineering, IBM Bangalore, India |
 | **Year** | 2024 |
@@ -1229,42 +1257,65 @@ Represents the **automated testing application** of multi-agent LLM systems — 
 
 # FILTERING GUIDE
 
+> **How citation count informs filtering:**
+> High citations (500+) = field consensus, safe to cite as established work.
+> Mid-range (50–500) = recognized contribution, cite with context.
+> Low / new (< 50) = emerging or niche; use only if it fills a specific gap no other paper covers.
+> Note: 2025 papers naturally have low counts — penalize only papers that are *also* low quality or narrow.
+
 ## Recommended 12–15 Papers for Final Review
 
-### Must-Include (8 core papers)
-| # | Reason |
-|---|--------|
-| 1 | Best survey directly on LMA systems for SE — He et al. TOSEM 2025 |
-| 2 | Largest systematic survey (124 papers) — Liu et al. TOSEM 2024 |
-| 9 | MetaGPT — essential framework, ICLR 2024 |
-| 10 | ChatDev — essential framework, ACL 2024 |
-| 11 | AutoGen — most adopted framework |
-| 13 | Agentless — critical counterpoint / challenges agent complexity |
-| 16 | SWE-Bench Pro — state-of-the-art benchmark |
-| 18 | Agentic SE Roadmap — future directions |
+### Tier 1 — Must-Include (9 core papers)
 
-### Strong Candidates (add 4–6 from these)
-| # | Adds |
-|---|------|
-| 3 | Distinguishes LLM vs. agent — good for background |
-| 6 | Benchmark landscape survey (150+ papers) |
-| 7 | Design patterns (16 patterns) — architectural depth |
-| 8 | Evaluation survey — ACL-published, high quality |
-| 12 | AgentCoder — concrete code generation results |
-| 14 | ALMAS — most recent agile-aligned framework (2025) |
-| 17 | SALLMA — architectural design angle |
-| 21 | Agile SE framework — ToM + SAFe integration, novel angle |
-| 23 | ICSE 2025 — top venue, 200%+ improvement on design issue localization |
+| Cite | Paper (short) | Citations | Why essential |
+|------|--------------|-----------|---------------|
+| [5] | Wang 2023 — Survey on LLM Autonomous Agents | **2,011 ✓** | Most-cited foundational survey in this space; establishes agent architecture vocabulary (Planning / Memory / Action / Perception) cited everywhere |
+| [11] | AutoGen | **851 ✓** | Most widely adopted multi-agent framework; 851 citations signals field consensus; enables the human-in-the-loop conversation pattern |
+| [9] | MetaGPT | **~1,186 ✓** | Highest-cited SE-specific framework; ICLR 2024 oral (top 1.2%); role-based SOP design is the canonical approach cited by nearly every later system |
+| [10] | ChatDev | **288 ✓** | Second most-cited SE framework; complements MetaGPT — shows natural language dialogue vs. structured documents trade-off |
+| [15] | Talebirad & Nadiri 2023 — Multi-Agent Collaboration | **282 ✓** | 282 citations makes this a de facto background reference for multi-agent coordination taxonomy; pairs with AutoGen for framework foundation |
+| [12] | AgentCoder | **227 ✓** | 227 citations; best-cited code generation agent with quantitative HumanEval/MBPP results — provides concrete benchmark numbers for your review |
+| [13] | Agentless (arXiv) | **~400** | ~400 citations despite being a 2024 preprint; the critical counterpoint to complex agents — essential for the "does complexity help?" debate |
+| [1] | He, Treude, Lo 2025 — LMA for SE (TOSEM) | **~60** | The most directly scoped survey for this review topic; TOSEM peer-reviewed; despite being new (~60 cites), it is the primary organizing framework |
+| [18] | Hassan et al. 2025 — Agentic SE Roadmap | **~40** | Defines the SE 3.0 / SASE vision and research agenda — essential for Introduction and Conclusion; ~40 cites for a 2025 paper signals rapid uptake |
 
-### Lower Priority (drop if over limit)
-| # | Reason |
-|---|--------|
-| 4 | Broad MAS survey — less SE-specific |
-| 5 | Foundational but 2023 — may be redundant with newer surveys |
-| 15 | Early 2023 — historical context only |
-| 22 | Requirements analysis — narrow application; small dataset (12 stories) |
-| 24 | Conceptual only — no implementation; lower-tier venue |
-| 25 | IBM demo — trivial code tested; no comparison to EvoSuite/Randoop |
+### Tier 2 — Strong Candidates (pick 3–5 to reach 12–14 total)
+
+| Cite | Paper (short) | Citations | What it adds | Recommendation |
+|------|--------------|-----------|--------------|----------------|
+| [8] | Yehudai et al. 2025 — Evaluation Survey (ACL) | **67 ✓** | ACL-published; 67 citations already for a 2025 paper is strong; fills the evaluation methodology gap; explains why benchmarks like SWE-bench matter | **Strongly recommend** |
+| [2] | Liu et al. 2024 — LLM Agents for SE Survey (TOSEM) | **~100 ✓** | 100 citations; broadest paper corpus (124 papers); provides dual SE+agent-architecture perspective; pairs well with [1] to cover the survey literature | **Recommend** |
+| [7] | Cai et al. 2025 — Design Patterns | **† < 20** | Low count due to being under review, NOT due to quality — fills a unique gap (16 design patterns, quality attributes) not covered by any other paper in this set | **Recommend if you want architectural depth** |
+| [23] | Batole et al. 2025 — LOCALIZEAGENT (ICSE) | **† < 15** | Very new but ICSE 2025 venue = top-tier; 206% improvement over LLM-alone; provides concrete application evidence; low count expected for a 2025 conference paper | **Recommend for application coverage** |
+| [3] | Jin et al. 2024 — From LLMs to Agents Survey | **~80** | 80 citations; uniquely distinguishes LLM vs. agent capabilities — useful for the Background section definition; overlaps with [1] and [2] so only keep if you need explicit LLM-vs-agent boundary discussion | **Optional — use for Background only** |
+| [20] | Xia et al. 2025 — Agentless PACMSE | **~80** | Journal version of [13]; ~80 cites; adds SWE-bench Verified 50.80% + ablations; **only cite instead of [13], not in addition — they are the same work** | **Use as [13] upgrade if you want peer-reviewed version** |
+| [16] | SWE-Bench Pro | **† < 15** | Very new; extends SWE-bench to enterprise-scale; essential if you want to discuss benchmark evolution; low count because it is a 2025 preprint | **Include if benchmarks are a focus section** |
+| [19] | Ronanki 2025 — Human-Agent Collaboration (FSE) | **† < 5** | Only 5-page work-in-progress; very new; but fills a unique governance/EU-AI-Act gap absent from every other paper — use if your review discusses trust or human oversight | **Include only for governance angle** |
+
+### Tier 3 — Lower Priority (drop first if over limit)
+
+| Cite | Paper (short) | Citations | Reason to deprioritize |
+|------|--------------|-----------|------------------------|
+| [4] | Chen et al. 2024 — MAS Survey | **29 ✓** | Only 29 citations; broad MAS scope (not SE-specific); content largely covered by [1], [2], [5]; drop unless you need a general multi-agent systems reference |
+| [6] | Guo et al. 2025 — Benchmark Survey | **† < 10** | New and low count; 150-paper benchmark overview is useful but overlaps heavily with [8] and [16]; keep only if benchmarks are a dedicated section |
+| [14] | ALMAS 2025 | **† < 5** | Very new workshop paper; content is interesting but low citation count + workshop venue = weakest framework paper; drop in favor of [9], [10], [11] |
+| [17] | SALLMA 2025 | **† < 10** | New workshop paper; architectural angle is useful but thin (ICSE SATrends, 5 pages); keep only if architecture is a named section in your review |
+| [21] | Chudziak & Cinkusz — CogniSim (ASE) | **† < 10** | 2-page demo paper; ToM integration is novel but unvalidated; low citation count reflects limited evidence base; drop unless you specifically discuss Theory of Mind |
+| [22] | Sami et al. 2025 — Requirements Analysis | **† < 5** | Very new; narrow application (12 user stories); academic-industry collaboration is a plus but small scale; lower-tier venue; drop unless requirements engineering is a focus |
+| [24] | Rajendran et al. — Refactoring Framework | **† < 5** | Conceptual only, no implementation; regional venue; no citations expected or received; weakest paper in the set — **recommend dropping** |
+| [25] | Garlapati et al. — Test Generation (IBM) | **† < 5** | IBM proof-of-concept; trivial code only; no comparison baseline; **recommend dropping** unless you need an industry/Watsonx example |
+
+---
+
+## Citation-Informed Selection Strategy
+
+**For a tight 12-paper review:** Use all 9 Tier 1 papers + pick [8], [2], [7] from Tier 2 = **12 papers**
+
+**For a broader 14-paper review:** Add [23] (ICSE application evidence) + [16] (benchmark evolution) = **14 papers**
+
+**Papers to avoid unless filling a specific gap:** [4], [14], [24], [25] — low citation counts *and* content covered by stronger papers
+
+**The citation paradox to discuss in your review:** Papers [9] MetaGPT (~1,186 cites) and [13] Agentless (~400 cites) represent opposite philosophies — complex agents vs. simple pipelines. The fact that Agentless is rapidly catching MetaGPT in citations while achieving better SWE-bench scores is itself a finding worth noting.
 
 ---
 
