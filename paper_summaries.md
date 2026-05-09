@@ -1,13 +1,12 @@
 # Literature Review — Multi-Agent Software Engineering
 ## Paper Summaries & Critical Analysis Database
 **Scope:** 2023–2026 (foundational pre-2023 work included where seminal)
-**Total papers tracked:** 25 | **Fully read:** 18 | **PDF needed:** 7
+**Total papers tracked:** 25 | **Fully read:** 25 | **PDF needed:** 0
 
 ---
 
 ## How to Use This File
 - **Filter** using the Theme column to group related papers for your review sections
-- **⚠️ PDF needed** entries have partial info from abstracts/metadata — upload PDFs to get full summaries
 - **BibTeX keys** follow `AuthorYEARkeyword` format for easy reference management
 - Suggested themes for the 2-page review: `[Survey]` `[Framework]` `[Benchmark]` `[Architecture]` `[Vision]` `[Application]`
 
@@ -35,13 +34,13 @@
 | 16 | SWE-Bench Pro | Deng et al. | 2025 | arXiv/cs.SE | Benchmark | ✅ Read |
 | 17 | SALLMA | Becattini et al. | 2025 | ICSE SATrends | Architecture | ✅ Read |
 | 18 | Agentic SE: Foundational Pillars | Hassan et al. | 2025 | arXiv/cs.SE | Vision | ✅ Read |
-| 19 | Trustworthy Human-Agent Collaboration | — | 2025 | FSE 2025 | Human-AI | ⚠️ PDF needed |
-| 20 | Demystifying LLM-Based SE Agents (ACM) | — | 2025 | PACMSE 2025 | Framework | ⚠️ PDF needed |
-| 21 | LLM-augmented MAS for Agile SE | Rasheed et al. | 2024 | ASE 2024 | Framework | ⚠️ PDF needed |
-| 22 | Multi-Agent LLM for Requirements Analysis | — | 2024 | SEAA 2024 | Application | ⚠️ PDF needed |
-| 23 | Agent-Oriented Code Design Issue Localization | — | 2025 | ICSE 2025 | Application | ⚠️ PDF needed |
-| 24 | Multi-Agent LLM for Software Design & Refactoring | — | 2025 | IEEE 2025 | Application | ⚠️ PDF needed |
-| 25 | AI-Powered MAS for Unit Test Generation | — | 2025 | IEEE 2025 | Application | ⚠️ PDF needed |
+| 19 | Trustworthy Human-Agent Collaboration | Ronanki | 2025 | FSE Companion '25 | Human-AI | ✅ Read |
+| 20 | Demystifying LLM-Based SE Agents (ACM) | Xia et al. | 2025 | PACMSE 2025 | Framework | ✅ Read |
+| 21 | LLM-augmented MAS for Agile SE | Chudziak & Cinkusz | 2024 | ASE 2024 | Framework | ✅ Read |
+| 22 | Multi-Agent LLM for Requirements Analysis | Sami et al. | 2025 | SEAA 2025 | Application | ✅ Read |
+| 23 | Agent-Oriented Code Design Issue Localization | Batole et al. | 2025 | ICSE 2025 | Application | ✅ Read |
+| 24 | Multi-Agent LLM for Software Design & Refactoring | Rajendran et al. | 2025 | SoutheastCon 2025 | Application | ✅ Read |
+| 25 | AI-Powered MAS for Unit Test Generation | Garlapati et al. | 2024 | GCAT 2024 | Application | ✅ Read |
 
 ---
 
@@ -852,9 +851,7 @@ Excellent for the Conclusion and Future Directions sections — frames where the
 
 ---
 
-# SECTION 6: PAPERS REQUIRING PDF UPLOAD
-
-The following 7 papers are from ACM DL or IEEE Xplore and could not be accessed in full. Please upload the PDFs and I will complete the summaries.
+# SECTION 6: HUMAN-AI COLLABORATION & APPLICATIONS
 
 ---
 
@@ -862,17 +859,46 @@ The following 7 papers are from ACM DL or IEEE Xplore and could not be accessed 
 
 | Field | Details |
 |-------|---------|
-| **BibTeX key** | TBD2025trustworthy |
-| **Authors** | Unknown (not accessible) |
+| **BibTeX key** | Ronanki2025trustworthy |
+| **Authors** | Krishna Ronanki |
+| **Affiliation** | Chalmers University of Technology / University of Gothenburg, Sweden |
 | **Year** | 2025 |
-| **Venue** | FSE 2025 (ACM SIGSOFT International Symposium on Foundations of Software Engineering) |
+| **Venue** | FSE Companion '25 (ACM SIGSOFT Companion Proceedings), Trondheim, Norway, June 23–27, 2025 |
 | **Theme** | Human-AI Collaboration |
 | **Source DB** | ACM DL |
 | **Links** | [ACM](https://dl.acm.org/doi/10.1145/3696630.3728717) |
-| **Status** | ⚠️ **PDF needed** — abstract only |
+| **Status** | ✅ Read |
 
-**Known from abstract:**
-Addresses trust and reliability in LLM-based multi-agent systems for software engineering. FSE 2025 is a top-tier SE venue — this paper likely has significant contribution to human-agent teaming design.
+### Main Contribution
+Proposes a RACI-based framework for task allocation between humans and LLM-based agents across SDLC phases, with explicit alignment to EU AI Act (AIA) compliance requirements. The 9-step process operationalizes which tasks can be delegated to agents and under what governance constraints, providing a practical governance tool for practitioners integrating LLM agents into software teams.
+
+### Methods Used
+- **RACI matrix adaptation:** Extends the standard RACI (Responsible / Accountable / Consulted / Informed) framework to cover LLM-based agents as team members alongside human roles.
+- **Key governance rule (Rule 3):** No Responsible assignment may be given to an LLM agent unless a human is Accountable for that same task — preserving human oversight as required by the EU AI Act.
+- **Example instantiation:** DevOps Planning phase with 3 human roles (Product Owner, Business Analyst, Scrum Master) + 3 LLM agents (Requirements Elicitation Agent, User Story Agent, Scrum Assistant — note: Scrum Assistant is hypothetical/future).
+- **6 tasks mapped:** Requirements Elicitation, Product Roadmap Definition, User Story Writing, Product Backlog Management, Sprint Planning, Sprint Goal Setting.
+- **Work-in-progress (5 pages):** Future validation via groupware walkthrough multi-case study planned.
+
+### Results / Findings
+- Tasks suitable for LLM-agent Responsible assignment: User Story Writing, Backlog Management, Sprint Planning.
+- Tasks NOT suitable (human must remain Responsible): Requirements Elicitation (direct stakeholder interaction required), Product Roadmap (strategic accountability).
+- Demonstrates that RACI-adapted framework naturally enforces AIA Article 14 (human oversight of high-risk AI systems).
+
+### Limitations
+- No empirical validation yet; framework is prescriptive/theoretical.
+- The Scrum Assistant LLM agent used in the example does not yet exist.
+- Scope limited to DevOps Planning phase — generalization to other SDLC phases requires further work.
+- Groupware walkthrough study planned but not yet conducted.
+
+### How It Relates to This Review
+Directly addresses the **trust and governance gap** in multi-agent SE systems. While most papers focus on performance (code generation accuracy, bug fix rates), this paper asks: how do we govern human-agent teams? It connects AI Act compliance to practical SDLC workflows, making it essential for the "future challenges" and "human-in-the-loop" sections of the review.
+
+### Critical Analysis
+**Strengths:** Highly practical and actionable; bridges regulatory compliance (EU AI Act) and SE practice in a way most technical papers ignore; RACI is widely understood by practitioners, lowering adoption barrier. Published at FSE — top-tier SE venue validates importance of the problem.
+
+**Weaknesses:** Work-in-progress with no validation data; the RACI adaptation is intuitive but not rigorously tested against real team dynamics; Rule 3 (human accountability prerequisite) is sound in principle but may be difficult to enforce in automated pipelines where accountability is diffuse.
+
+**Open question:** What happens when the "human Accountable" is overwhelmed by the pace of LLM-agent outputs and rubber-stamps decisions? The framework doesn't address accountability drift at scale.
 
 ---
 
@@ -880,16 +906,53 @@ Addresses trust and reliability in LLM-based multi-agent systems for software en
 
 | Field | Details |
 |-------|---------|
-| **BibTeX key** | TBD2025demystify |
-| **Authors** | Unknown (not accessible) |
+| **BibTeX key** | Xia2025demystify |
+| **Authors** | Chunqiu Steven Xia*, Yinlin Deng*, Soren Dunn, Lingming Zhang (* equal contribution) |
+| **Affiliation** | University of Illinois Urbana-Champaign (UIUC) |
 | **Year** | 2025 |
-| **Venue** | Proceedings of the ACM on Software Engineering (PACMSE) |
-| **Theme** | Framework / Analysis |
+| **Venue** | Proc. ACM Softw. Eng., Vol. 2, FSE, Article FSE037, July 2025 (received 2024-09-13; accepted 2025-01-14) |
+| **Theme** | Framework / Empirical Analysis |
 | **Source DB** | ACM DL |
 | **Links** | [ACM](https://dl.acm.org/doi/abs/10.1145/3715754) |
-| **Status** | ⚠️ **PDF needed** — abstract only |
+| **Status** | ✅ Read |
 
-**Note:** Distinct from Agentless (Paper 13) despite similar title. PACMSE is the venue for FSE/ISSTA papers.
+> **Note:** This is the **peer-reviewed journal version** of the Agentless system (arXiv preprint = Paper 13). The published version adds SWE-bench Verified results, extended ablation studies, upper-bound analysis, and comparison against 26 agent-based baselines.
+
+### Main Contribution
+Agentless challenges the assumption that more agent complexity = better performance. The system decomposes GitHub issue resolution into three sequential non-agentic phases: (1) **Localization** (file → class → function), (2) **Repair** (sample multiple patches via LLM), (3) **Patch Validation** (filter + rank patches). By removing autonomous decision-making and tool use, Agentless achieves state-of-the-art results at dramatically lower cost and with full reproducibility.
+
+### Methods Used
+- **Hierarchical localization:** Tree-structure file embedding → suspicious files → suspicious classes/functions → edit locations.
+- **Patch sampling:** Generates multiple candidate patches; filters uncompilable; ranks by test-passing and majority voting.
+- **Benchmarks:** SWE-bench Lite (300 issues), SWE-bench Verified (500 issues, higher quality).
+- **Models tested:** GPT-4o (primary), Claude 3.5 Sonnet (best results).
+- **Comparison baseline:** 26 agent-based systems (AutoCodeRover, SWE-agent, CodeAct, etc.).
+
+### Results / Findings
+| Benchmark | Model | Resolve Rate |
+|-----------|-------|-------------|
+| SWE-bench Lite | GPT-4o | 32.00% |
+| SWE-bench Verified | GPT-4o | 38.80% |
+| SWE-bench Verified | Claude 3.5 Sonnet | **50.80%** |
+- **Upper bound analysis:** Even if the "best" patch from all candidates were selected, only 42% (126/300) of issues would be resolved — revealing a fundamental ceiling from localization failures and problem complexity, not agent design.
+- **Problem classification:** Issues vary by description quality (some contain solution hints); location information availability; reproducibility.
+- **Adopted by:** OpenAI (GPT-4o, o1) and DeepSeek (V3, R1) as their default SWE-bench evaluation approach.
+
+### Limitations
+- Still fails on ~50% of issues even with Claude 3.5 Sonnet — upper bound analysis suggests LLM capability is the bottleneck.
+- Agentless design trades flexibility for reproducibility; cannot handle tasks requiring multi-step tool interaction or dynamic information gathering.
+- Single-file patch assumption may miss cross-file bugs.
+- Data leakage risk: training data may include SWE-bench issues.
+
+### How It Relates to This Review
+This paper is the **critical counterpoint** to MetaGPT/ChatDev/AutoGen. The community trend toward increasingly complex agent frameworks is challenged by showing that a simple, structured pipeline outperforms complex agents on the leading benchmark. Essential for the "complexity vs. simplicity" debate in the review.
+
+### Critical Analysis
+**Strengths:** Rigorous empirical methodology; reproducible pipeline; the upper-bound analysis is a genuine intellectual contribution that reframes the field's evaluation discourse; PACMSE journal venue ensures peer-reviewed quality; adopted by major LLM labs as standard evaluation baseline validates real-world impact.
+
+**Weaknesses:** "Agentless" is a design choice that works for SWE-bench's structure (single-repo, isolated issues) but may not generalize to enterprise codebases with cross-cutting concerns; the paper doesn't address maintenance workloads, new feature development, or multi-repo scenarios where agent autonomy may be necessary.
+
+**Irony:** By showing that simple beats complex, this paper implicitly raises the question of why the field invests so heavily in elaborate agent architectures. The answer may be that SWE-bench is itself an imperfect proxy for real SE work.
 
 ---
 
@@ -897,35 +960,102 @@ Addresses trust and reliability in LLM-based multi-agent systems for software en
 
 | Field | Details |
 |-------|---------|
-| **BibTeX key** | Rasheed2024agile |
-| **Authors** | Rasheed et al. |
+| **BibTeX key** | Chudziak2024cogniSim |
+| **Authors** | Jarosław A. Chudziak, Konrad Cinkusz |
+| **Affiliation** | Warsaw University of Technology, Poland |
 | **Year** | 2024 |
-| **Venue** | ASE 2024 (IEEE/ACM International Conference on Automated Software Engineering) |
-| **Theme** | Framework |
+| **Venue** | ASE 2024 (IEEE/ACM International Conference on Automated Software Engineering), Sacramento, CA, Oct 27 – Nov 1, 2024 |
+| **Theme** | Framework / Agile SE |
 | **Source DB** | ACM DL + IEEE Xplore |
 | **Links** | [ACM](https://dl.acm.org/doi/10.1145/3691620.3695336) · [IEEE](https://ieeexplore.ieee.org/document/10764913/) |
-| **Status** | ⚠️ **PDF needed** — paywalled on both databases |
+| **Status** | ✅ Read |
 
-**Known from search results:**
-Proposes a cognitive multi-agent ecosystem for agile software engineering. Includes an automated code review system using 4 specialized agents: code review, bug detection, code smells, and optimization. Integrates iterative agile methodologies.
+### Main Contribution
+Introduces the **CogniSim Ecosystem** — a cognitive multi-agent framework for agile software engineering that integrates LLMs with Theory of Mind (ToM) for realistic agent behavior simulation. Agents model not just task execution but the mental states and perspectives of different team roles (developers, quality checkers, methodology reviewers), enabling simulation of team dynamics.
+
+### Methods Used
+- **Theory of Mind integration:** Agents maintain models of other agents' beliefs and intentions, enabling more realistic collaboration simulation.
+- **Agent roles:** Developer agents, Executor agents (run code), Quality Checker agents, Methodology Reviewer agents (SAFe compliance).
+- **Frameworks used:** LangChain for LLM orchestration; SAFe (Scaled Agile Framework) for process structure.
+- **Scope:** 2-page paper (demo/vision track at ASE 2024); proof-of-concept via case studies and simulations.
+
+### Results / Findings
+- Case studies demonstrate agents can simulate agile team interactions and identify code quality issues through multi-perspective review.
+- ToM-based agents produce more contextually appropriate feedback than single-agent approaches.
+- System can operate within SAFe methodology constraints, aligning LLM agent outputs with enterprise agile processes.
+- **Note:** As a 2-page demo paper, quantitative benchmarking is limited; results are primarily qualitative.
+
+### Limitations
+- 2-page format precludes rigorous empirical evaluation; no comparison against baselines.
+- Proof-of-concept only — scalability to real sprint teams unvalidated.
+- Theory of Mind implementation is approximated through prompting, not true belief modeling.
+- LangChain dependency introduces framework volatility risk.
+
+### How It Relates to This Review
+Provides the **agile SE perspective** on multi-agent systems, connecting the technical agent frameworks (MetaGPT, AutoGen) to Agile/SAFe process methodologies. ToM integration is a novel angle largely absent from other papers in this set. Relevant to discussions of agent role design and team simulation.
+
+### Critical Analysis
+**Strengths:** Theory of Mind framing is genuinely novel in the SE-agent context; SAFe integration shows awareness of enterprise adoption realities; ASE 2024 is a strong venue for this type of work.
+
+**Weaknesses:** 2-page length severely limits claims — the paper presents a vision more than validated results; no quantitative evaluation of whether ToM actually improves outcomes vs. standard role-prompted agents; the LangChain + SAFe combination adds significant engineering complexity without clear evidence of benefit over simpler approaches.
+
+**Gap it exposes:** Most multi-agent SE papers simulate software development in isolation; CogniSim attempts to simulate the social/team dynamics of SE, which is arguably more realistic but also harder to evaluate rigorously.
 
 ---
 
-## Paper 22 — A Multi-Agent LLM System for Automated Requirements Analysis: User Story Generation and Prioritization
+## Paper 22 — A Multi-Agent LLM System for Automated Requirements Analysis: A Study on User Story Generation and Prioritization
 
 | Field | Details |
 |-------|---------|
-| **BibTeX key** | TBD2024requirements |
-| **Authors** | Unknown (not accessible) |
-| **Year** | 2024 |
-| **Venue** | SEAA 2024 (Software Engineering and Advanced Applications) |
+| **BibTeX key** | Sami2025requirements |
+| **Authors** | Malik Abdul Sami, Zheying Zhang, Muhammad Waseem, Kai-Kristian Kemell, Zeeshan Rasheed, Tomas Herda, et al. |
+| **Affiliation** | Tampere University (Finland) + Austrian Post (industry) |
+| **Year** | 2025 |
+| **Venue** | SEAA 2025 (Euromicro Conference on Software Engineering and Advanced Applications), LNCS 16082, pp. 178–187, 2026 (Springer) |
 | **Theme** | Application / Requirements Engineering |
 | **Source DB** | ACM DL (Springer) |
-| **Links** | [ACM](https://dl.acm.org/doi/abs/10.1007/978-3-032-04200-2_12) |
-| **Status** | ⚠️ **PDF needed** — paywalled |
+| **Links** | [Springer](https://link.springer.com/chapter/10.1007/978-3-031-72194-0_12) |
+| **Status** | ✅ Read |
 
-**Known from abstract:**
-Uses multi-agent LLM system for requirements engineering tasks (user story generation and prioritization) through role-based agent configurations.
+### Main Contribution
+Demonstrates a 4-agent LLM pipeline for requirements engineering: generating user stories from project background, then prioritizing them using the **100-dollar technique**. Evaluates 4 LLMs (GPT-4o, LLaMA 3.3, Mistral-Nemo, Falcon3) on a real Mobile Delivery Application case study from Austrian Post, providing quantitative comparison across relevance, coverage, and consistency metrics.
+
+### Methods Used
+- **4-agent architecture:** PO Agent (domain analysis) → Developer Agent (user story generation) → QA Agent (quality review) → Manager Agent (100-dollar prioritization + Kendall's Tau consistency check).
+- **Relevance metric:** Cosine similarity using `all-MiniLM-L6-v2` sentence embedding model.
+- **Consistency metric:** Kendall's Tau rank correlation across multiple LLM runs.
+- **Dataset:** 12 user stories for a Mobile Delivery Application (real industrial case from Austrian Post).
+- **Baseline:** Comparison to human expert prioritization.
+- **100-dollar technique:** Stakeholders (agents) allocate 100 virtual dollars across requirements to reflect relative importance.
+
+### Results / Findings
+| LLM | Avg. Cosine Similarity | Kendall's Tau |
+|-----|----------------------|---------------|
+| LLaMA 3.3 70B | **0.50** (highest relevance) | — |
+| GPT-4o | 0.44 | — (best coverage & human alignment) |
+| Mistral-Nemo | — | **0.252** (most consistent) |
+| Falcon3 | 0.46 | — |
+- GPT-4o produces user stories closest to human expert judgment (best coverage + alignment).
+- LLaMA 3.3 achieves highest semantic similarity but not necessarily best coverage.
+- Mistral-Nemo is the most consistent across runs.
+- Overall: only moderate alignment with human expert across all models — no LLM fully replaces domain expert judgment.
+
+### Limitations
+- Single industrial case study (12 user stories) — limited generalizability.
+- Single human expert used as ground truth; no inter-rater reliability established.
+- Run-to-run variability of LLMs reduces reliability for production use.
+- Static background document input — dynamic project evolution and stakeholder interaction not modeled.
+- Background info alone insufficient for complete requirements capture (stakeholder interviews still needed).
+
+### How It Relates to This Review
+Represents the **requirements engineering application** of multi-agent LLM systems — the upstream SDLC phase often neglected in favor of code generation. Provides concrete quantitative evidence of LLM agent capabilities and limitations in early-phase SE work. The 100-dollar prioritization + Kendall's Tau methodology offers a rigorous evaluation framework other application papers lack.
+
+### Critical Analysis
+**Strengths:** Real industrial case study with Austrian Post adds external validity; multi-metric evaluation (relevance + consistency + human alignment) is more rigorous than many application papers; quantitative LLM comparison is directly useful for practitioners choosing models; academic-industry collaboration is a strength for applicability.
+
+**Weaknesses:** 12 user stories is a very small dataset; single expert ground truth is methodologically weak; the result that "no model fully replaces domain expert" is unsurprising — the more interesting finding (what specifically do LLMs miss?) is underexplored; SEAA is a mid-tier venue.
+
+**Practical implication:** The moderate alignment scores (0.44–0.50 cosine similarity) suggest LLM agents can serve as a first draft / scaffolding tool for requirements, but human review remains essential — a finding consistent with the governance framework in Paper 19.
 
 ---
 
@@ -933,17 +1063,56 @@ Uses multi-agent LLM system for requirements engineering tasks (user story gener
 
 | Field | Details |
 |-------|---------|
-| **BibTeX key** | TBD2025codedesign |
-| **Authors** | Unknown (not accessible) |
+| **BibTeX key** | Batole2025localizeagent |
+| **Authors** | Fraol Batole, David OBrien, Tien N. Nguyen, Robert Dyer, Hridesh Rajan |
+| **Affiliation** | Tulane University, Iowa State University, University of Texas at Dallas, University of Nebraska-Lincoln |
 | **Year** | 2025 |
-| **Venue** | ICSE 2025 (IEEE/ACM International Conference on Software Engineering) |
-| **Theme** | Application / Code Quality |
+| **Venue** | ICSE 2025 (47th IEEE/ACM International Conference on Software Engineering) |
+| **Theme** | Application / Code Quality / Design Issues |
 | **Source DB** | IEEE Xplore |
 | **Links** | [IEEE](https://ieeexplore.ieee.org/iel8/11029684/11029718/11029742.pdf) |
-| **Status** | ⚠️ **PDF needed** — PDF binary not parseable via web |
+| **Status** | ✅ Read |
 
-**Known from abstract:**
-Leverages LLM agents to automatically analyze and localize design issues in code. Published at ICSE 2025 — the top-tier SE conference.
+### Main Contribution
+Introduces **LOCALIZEAGENT** — a 4-agent pipeline that combines static analysis (PMD), program analysis metrics, and LLM-based ranking to automatically identify and localize code design issues (anti-patterns) requiring refactoring. Achieves 138–206% improvement over direct LLM prompting across three design issue categories on a real-world dataset of 6,000+ Java projects.
+
+### Methods Used
+- **4-agent pipeline:**
+  1. *Design Issue Analysis Agent* — runs PMD static analysis, identifies candidate design issues.
+  2. *Program Analysis Agent* — computes structural metrics: Fan-in/out, Call Relationships, Variable Usage, Class Coupling.
+  3. *Context-aware Prompt Building Agent* — synthesizes PMD output + metrics into structured LLM prompts.
+  4. *LLM-based Ranking Agent* — ranks candidate refactoring locations using GPT-4o or Claude 3.
+- **Dataset:** Aniche et al. refactoring dataset; 6K+ Java projects; 4 refactoring types (Parameterize Variable, Inline Method, Inline Variable, Move Method).
+- **3 design issue categories:** Modularity, Information Hiding, Complexity.
+- **Evaluation metric:** Exact-Match@K (EM@K) — whether the correct location appears in top-K predictions.
+- **LLMs compared:** GPT-4o (best accuracy), Claude 3 (best time/cost efficiency).
+
+### Results / Findings
+| Design Issue Category | Baseline (LLM alone) | LOCALIZEAGENT (GPT-4o) | Improvement |
+|----------------------|---------------------|------------------------|-------------|
+| Modularity (EM@1) | 8.0% | 24.5% | **+206%** |
+| Complexity (EM@1) | 10.7% | 28.5% | **+166%** |
+| Information Hiding (EM@1) | 16.9% | 40.3% | **+138%** |
+- Best performance on Inline Variable refactoring type (43–48% EM@1).
+- Claude 3 offers comparable accuracy with significantly lower latency and cost — practical advantage for large codebases.
+- Program analysis metrics (Fan-in/out, coupling) are the most informative context for LLM ranking.
+
+### Limitations
+- Scope limited to **local design issues** (within a single class) — cross-class or architectural-level issues not addressed.
+- PMD rule-based filtering may introduce false positives that propagate through the pipeline.
+- LLM non-determinism means results vary across runs.
+- Data leakage risk: LLMs may have been trained on code from the Aniche dataset.
+- Java only; generalization to other languages unvalidated.
+
+### How It Relates to This Review
+Demonstrates the **code maintenance application** of multi-agent LLM systems — extending beyond code generation to code quality management. The hierarchical pipeline (static analysis → program analysis → LLM ranking) mirrors the localization approach of Agentless (Paper 13/20) but applied to design issues rather than bug fixes. The 200%+ improvement over LLM-alone prompting quantifies the value of the multi-agent structure.
+
+### Critical Analysis
+**Strengths:** Rigorous evaluation on 6K real-world Java projects; multi-LLM comparison; EM@K metric is appropriate for the localization task; ICSE 2025 publication signals peer-reviewed quality at the top SE venue; practical pipeline that integrates existing tools (PMD) rather than replacing them.
+
+**Weaknesses:** 28.5% EM@1 for complexity (the best category) means the system fails 71.5% of the time — "206% improvement" sounds impressive but the absolute performance is modest; local-only scope significantly limits applicability for real codebases where design issues are often cross-cutting; the PMD dependency creates a ceiling: issues PMD cannot detect are invisible to the system.
+
+**Insight:** The large gap between direct LLM prompting (8–17% EM@1) and the full pipeline (25–40%) strongly suggests that structural context (program metrics) is what makes the difference — the LLM alone lacks the code comprehension needed for precise localization without these scaffolded inputs.
 
 ---
 
@@ -951,35 +1120,108 @@ Leverages LLM agents to automatically analyze and localize design issues in code
 
 | Field | Details |
 |-------|---------|
-| **BibTeX key** | TBD2025refactoring |
-| **Authors** | Unknown (not accessible) |
+| **BibTeX key** | Rajendran2025refactoring |
+| **Authors** | Vasanth Rajendran, Dinesh Besiahgari, Sachin C. Patil, Manjunath Chandrashekaraiah, Vishnu Challagulla |
+| **Affiliation** | Amazon; University of Cincinnati; Independent; ALAB; Egen.ai |
 | **Year** | 2025 |
-| **Venue** | IEEE Conference 2025 |
-| **Theme** | Application / Refactoring |
+| **Venue** | IEEE SoutheastCon 2025 |
+| **Theme** | Application / Software Design & Refactoring |
 | **Source DB** | IEEE Xplore |
 | **Links** | [IEEE](https://ieeexplore.ieee.org/document/10971563/) |
-| **Status** | ⚠️ **PDF needed** |
+| **Status** | ✅ Read |
 
-**Known from abstract:**
-Proposes a novel multi-agent LLM environment for automated software design and refactoring. Conceptual framework paper.
+### Main Contribution
+Proposes a formal conceptual framework for a multi-agent LLM environment where specialized agents collaboratively perform software design and refactoring. The framework introduces a formal mathematical model (state space, action space, utility functions, coordination protocol) and motivates the approach through a concrete example showing that a single-agent solution causes security regressions while multi-agent collaboration avoids them.
+
+### Methods Used
+- **4 specialized agents:** Performance Agent, Security Agent, Maintainability Agent, UI/UX Agent.
+- **Communication/Coordination Layer:** Manages inter-agent messaging and conflict resolution.
+- **Formal model:**
+  - State space: S = (C, M) where C = code artifacts, M = metadata.
+  - Action space: Ξ per agent.
+  - Utility function: Uᵢ(s): S → ℝ per agent.
+  - Coordination Protocol: Π.
+  - Termination Condition: τ.
+- **Coordination protocols discussed:** Consensus-based (agents vote on changes) vs. Auction-based (agents bid for tasks based on capability).
+- **Communication complexity:** O(R × n × m) where R = rounds, n = agents, m = message size.
+- **Motivating example:** Performance Agent alone achieves 40% CPU reduction but introduces SQL injection vulnerability; multi-agent system achieves 65% CPU reduction while maintaining security.
+
+### Results / Findings
+- Conceptual framework only — **no implementation or empirical results**.
+- The 40% → 65% CPU improvement example illustrates the theoretical advantage of multi-agent specialization.
+- Consensus protocol ensures all agents agree before changes are committed; auction protocol reduces communication overhead.
+- Formal model enables reasoning about termination guarantees and utility trade-offs.
+
+### Limitations
+- **Purely conceptual** — no prototype, no experiments, no evaluation against baselines.
+- LLM hallucination propagation: if one agent generates a flawed output, downstream agents may amplify rather than correct errors.
+- Formal model is simplified; real code has far more complex state representations.
+- Ethical/accountability concerns for automated refactoring in production systems are noted but not resolved.
+- Communication complexity O(R × n × m) may become prohibitive at scale.
+
+### How It Relates to This Review
+Provides the **theoretical/architectural framing** for multi-agent software refactoring — complementing the empirical work of Papers 23 (LOCALIZEAGENT) and 9 (MetaGPT). The formal model and coordination protocol discussion connect to the broader multi-agent systems literature. Useful as a background reference for architectural design discussions.
+
+### Critical Analysis
+**Strengths:** The motivating example (single-agent creates security vulnerabilities, multi-agent avoids them) is compelling and intuitive; the formal model provides a rigorous foundation even if the paper doesn't validate it empirically; coordination protocol comparison (consensus vs. auction) surfaces a genuine engineering trade-off.
+
+**Weaknesses:** A conceptual framework paper published in 2025 with no implementation is a weak contribution — the field needs empirical evidence, not more frameworks; IEEE SoutheastCon is a regional/lower-tier venue; the "65% CPU improvement" example is hypothetical and illustrative, not measured; hallucination propagation risk is acknowledged but the proposed mitigation ("validation modules") is vague.
+
+**Context:** This paper represents the "proposal phase" of multi-agent SE research — there are many such conceptual frameworks circulating. Its value is primarily as a point of comparison: it shows what the field *hopes* multi-agent systems can do, while papers like Agentless (Paper 13/20) and LOCALIZEAGENT (Paper 23) show what they *actually* do when implemented and measured.
 
 ---
 
-## Paper 25 — AI-Powered Multi-Agent Framework for Automated Unit Test Case Generation
+## Paper 25 — AI-Powered Multi-Agent Framework for Automated Unit Test Case Generation: Enhancing Software Quality through LLMs
 
 | Field | Details |
 |-------|---------|
-| **BibTeX key** | TBD2025testgen |
-| **Authors** | Unknown (not accessible) |
-| **Year** | 2025 |
-| **Venue** | IEEE Conference 2025 |
-| **Theme** | Application / Testing |
+| **BibTeX key** | Garlapati2024testgen |
+| **Authors** | Anusha Garlapati, M N V Satya Sai Muni Parmesh, Dr. Savitha, Jaisri S |
+| **Affiliation** | Watsonx Client Engineering, IBM Bangalore, India |
+| **Year** | 2024 |
+| **Venue** | 2024 5th IEEE Global Conference for Advancement in Technology (GCAT), Karnataka, India, Oct 4–6, 2024 |
+| **Theme** | Application / Testing / Test Generation |
 | **Source DB** | IEEE Xplore |
 | **Links** | [IEEE](https://ieeexplore.ieee.org/document/10923987/) |
-| **Status** | ⚠️ **PDF needed** |
+| **Status** | ✅ Read |
 
-**Known from abstract:**
-Uses multi-agent LLM framework for automated unit test generation to enhance software quality.
+### Main Contribution
+Presents an IBM Watsonx-based multi-agent framework for automated Java unit test generation. Three specialized agents collaborate in an iterative loop — Reviewer, Code Generator, Decision-Maker — using LangGraph for orchestration and Mistral-large as the backbone LLM. The iterative feedback loop refines test cases until quality standards (100% code coverage) are met, demonstrating reduced human intervention.
+
+### Methods Used
+- **3-agent iterative loop:**
+  1. *Reviewer Agent* — examines source code, identifies test scenarios and edge cases, provides structured feedback.
+  2. *Code Generation Agent* — implements JUnit test cases based on Reviewer feedback.
+  3. *Decision-Making Agent* — evaluates whether generated tests meet quality standards; if not, routes back to Reviewer for another iteration.
+- **Orchestration:** LangGraph (workflow state machine for agent loops).
+- **LLM:** Mistral-large (via IBM Watsonx).
+- **Target language:** Java (JUnit framework).
+- **Coverage target:** 100% statement coverage.
+- **Test subject:** Simple arithmetic Java class (multiply/divide methods).
+
+### Results / Findings
+- 100% code coverage achieved for the provided sample code.
+- Edge cases handled correctly (e.g., division by zero raises appropriate exception).
+- Iterative refinement loop successfully converges without human intervention.
+- Multi-agent approach reduces the burden of manually writing and reviewing test cases.
+
+### Limitations
+- **Severely limited scope:** Only tested on a simple 2-method Java class (multiply/divide) — 100% coverage of trivial code is not a meaningful benchmark.
+- No comparison against existing automated test generation tools (EvoSuite, Randoop, CodaMosa).
+- Scalability to real-world codebases (complex classes, inheritance hierarchies, external dependencies) entirely unvalidated.
+- Only Java/JUnit — no cross-language evaluation.
+- IBM Watsonx / Mistral-large may not be the optimal LLM choice; no model ablation.
+- GCAT is a low-tier regional conference.
+
+### How It Relates to This Review
+Represents the **automated testing application** of multi-agent LLM systems — an important quality assurance dimension of the SDLC. The LangGraph orchestration approach connects to the broader theme of workflow-based agent coordination. However, as a proof-of-concept on trivial code, it contributes primarily as an illustrative example of the pattern rather than a rigorous evaluation. Useful for showing the breadth of multi-agent SE applications.
+
+### Critical Analysis
+**Strengths:** The 3-agent loop with iterative quality enforcement is a clean and reusable design pattern; LangGraph as orchestration layer is a practical choice with real-world adoption; the decision-making agent as quality gate (loop-back or terminate) is an elegant architectural choice; IBM Watsonx origin gives the work industrial credibility.
+
+**Weaknesses:** The evaluation is the paper's major weakness — 100% coverage on a 2-method class proves nothing about scalability or real-world utility; the absence of comparison against EvoSuite or similar tools makes it impossible to assess whether the multi-agent overhead is justified; the "enhanced software quality" claim in the title is not substantiated by the minimal experiment; GCAT venue significantly limits confidence in peer-review rigor.
+
+**Verdict:** This paper is best read as an industrial demo/proof-of-concept from IBM practitioners rather than a research contribution. Its value for the review is illustrative (showing multi-agent patterns applied to testing) rather than evidentiary. If including in the final 12–15 papers, pair with a stronger testing paper or frame as "industry adoption signal."
 
 ---
 
@@ -1011,8 +1253,8 @@ Uses multi-agent LLM framework for automated unit test generation to enhance sof
 | 12 | AgentCoder — concrete code generation results |
 | 14 | ALMAS — most recent agile-aligned framework (2025) |
 | 17 | SALLMA — architectural design angle |
-| 21 | Agile SE framework — pending PDF |
-| 23 | ICSE 2025 — top venue, code quality angle — pending PDF |
+| 21 | Agile SE framework — ToM + SAFe integration, novel angle |
+| 23 | ICSE 2025 — top venue, 200%+ improvement on design issue localization |
 
 ### Lower Priority (drop if over limit)
 | # | Reason |
@@ -1020,8 +1262,9 @@ Uses multi-agent LLM framework for automated unit test generation to enhance sof
 | 4 | Broad MAS survey — less SE-specific |
 | 5 | Foundational but 2023 — may be redundant with newer surveys |
 | 15 | Early 2023 — historical context only |
-| 22 | Requirements analysis — narrow application |
-| 24–25 | Application papers — only keep if you want testing/refactoring angle |
+| 22 | Requirements analysis — narrow application; small dataset (12 stories) |
+| 24 | Conceptual only — no implementation; lower-tier venue |
+| 25 | IBM demo — trivial code tested; no comparison to EvoSuite/Randoop |
 
 ---
 
@@ -1049,4 +1292,4 @@ Uses multi-agent LLM framework for automated unit test generation to enhance sof
 
 ---
 
-*Last updated: 2026-05-08 | Papers read: 18/25 | PDFs pending: 7*
+*Last updated: 2026-05-08 | Papers read: 25/25 | PDFs pending: 0*
