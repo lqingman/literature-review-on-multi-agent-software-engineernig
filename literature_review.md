@@ -6,61 +6,61 @@
 
 ## 1. Introduction
 
-Software engineering is undergoing a structural transformation. The emergence of large language models (LLMs) capable of generating, reviewing, and refactoring code has shifted agent-based computing from theoretical curiosity to practical infrastructure. Yet single-agent systems — one model, one task — have proven insufficient for the complexity of real software projects. The field has consequently converged on **multi-agent architectures**, in which specialized LLM-powered agents collaborate across the software development lifecycle (SDLC): planning, coding, testing, debugging, and maintenance.
+Software engineering is undergoing a structural transformation. The emergence of large language models (LLMs) capable of generating, reviewing, and refactoring code has shifted agent-based computing from theoretical curiosity to practical infrastructure. Yet single-agent systems — one model, one task — have proven insufficient for the complexity of real software projects. The field has consequently converged on **multi-agent architectures**, in which specialized LLM-powered agents collaborate across the full software development lifecycle (SDLC): planning, coding, testing, debugging, and maintenance.
 
-Hassan et al. [13] frame this shift as "SE 3.0," coining *Structured Agentic Software Engineering* (SASE) and arguing that fully autonomous engineering teams represent the trajectory of the discipline. He, Treude, and Lo [2] confirm the scope of this transformation by surveying 41 primary studies and mapping LLM-based multi-agent (LMA) systems across every SDLC stage. This review synthesizes fifteen papers (2023–2025) to answer the central question: *How are LLM-based multi-agent systems designed and applied across the SDLC, and what are the key open challenges?*
+This transformation matters because software complexity is not diminishing. Enterprise codebases span millions of lines, involve continuous integration pipelines, and require coordination across specializations that no single model can reliably master. Multi-agent systems promise to decompose this complexity, assigning subtasks to specialized agents whose outputs are integrated into coherent software artifacts.
 
----
-
-## 2. Background: From LLM Agents to Multi-Agent Systems
-
-Wang et al. [1] establish the foundational vocabulary: a single LLM-based agent comprises four interacting modules — **Profile** (role and persona), **Memory** (context storage), **Planning** (goal decomposition), and **Action** (tool use and code execution). This framework, cited over 2,000 times, underpins virtually every subsequent multi-agent design.
-
-Moving from single to multi-agent systems multiplies both capability and complexity. Guo et al. [4] survey this evolution in depth, documenting how LLM-MA systems advance beyond single-agent planning through mechanisms of **agent profiling**, **inter-agent communication**, and **skill specialization**. They identify three principal communication topologies — layered, decentralized, and centralized — each with distinct implications for coordination overhead and failure propagation. Talebirad and Nadiri [11], writing in mid-2023 when the field was nascent, anticipated precisely this taxonomy and flagged challenges — agent looping, context overflow, and trust between agents — that the literature has since confirmed as critical. Together, these three foundational works establish that the power of multi-agent SE comes at the cost of coordination complexity.
+This review synthesizes fifteen papers (2023–2025), spanning surveys, framework designs, and empirical evaluations, to answer: *How are LLM-based multi-agent systems designed and applied across the SDLC, and what are the key open challenges?* Papers were selected by cross-validating two independent search workflows — Claude-assisted deep analysis and Consensus database search — producing a corpus of ~6,300 combined citations across top venues including ICLR, ACL, and ACM TOSEM.
 
 ---
 
-## 3. Current Approaches
+## 2. Background and Foundations
 
-### 3.1 Frameworks and Coordination Paradigms
+Wang et al. [1] establish the foundational vocabulary: a single LLM-based agent comprises four interacting modules — **Profile** (role and persona), **Memory** (context storage), **Planning** (goal decomposition), and **Action** (tool use and code execution). This architecture, cited over 2,000 times, underpins virtually every subsequent multi-agent design and defines the terminology used across the literature.
 
-The literature clusters around two dominant paradigms for multi-agent coordination in software tasks.
-
-**Structured-document coordination** is exemplified by MetaGPT [5], which encodes software engineering workflows as *Standardized Operating Procedures* (SOPs). Agents are assigned canonical software roles — product manager, architect, engineer, QA — and communicate through structured artifacts (PRDs, design docs, test reports) rather than free-form dialogue. This approach reduces hallucination and role confusion by making intermediate products explicit and inspectable. MetaGPT achieves 85.9% on HumanEval, establishing the structured-document approach as the field's reference point for complex software generation.
-
-**Dialogue-based coordination** is represented by ChatDev [6], which organizes agent interaction as a *Chat Chain* of role-playing conversations between pairs of agents (CEO↔CTO, programmer↔tester). Rather than pre-defined artifact schemas, agents reach consensus through natural language. ChatDev's system generates working small-scale software from a single natural-language specification, demonstrating that conversational coordination can substitute for structural constraints when tasks are well-scoped.
-
-**General-purpose infrastructure** bridges both paradigms. AutoGen [7] provides a conversation-based abstraction layer in which any pair of agents can exchange messages, delegate subtasks, or invoke tools — making it the backbone of dozens of task-specific systems. Unlike MetaGPT and ChatDev, AutoGen makes no assumption about the SE domain, positioning it as infrastructure rather than application.
-
-**Iterative feedback loops** add a third pattern. AgentCoder [8] deploys a three-agent pipeline — programmer, test designer, executor — in which generated code is repeatedly tested and refined until all test cases pass. This achieves 96.3% Pass@1 on HumanEval with GPT-4, the strongest code-generation result in the reviewed corpus, and illustrates that tight feedback cycles can substitute for architectural complexity.
-
-### 3.2 The Complexity Paradox
-
-A significant counterpoint to the frameworks above is *Agentless* [9]. Rather than orchestrating autonomous agent decisions, Agentless applies a deterministic three-phase pipeline — fault localization, candidate patch generation, patch selection — with no agent planning or tool-calling autonomy. Despite this simplicity, it achieves **50.80% on SWE-bench** (with Claude 3.5 Sonnet), a state-of-the-art result that outperforms more complex autonomous agent systems at lower API cost. OpenAI and DeepSeek have since adopted this approach as a standard evaluation baseline.
-
-Agentless raises a question the field has not yet answered: *When does architectural complexity pay off?* The absence of a principled theory for when to add agent autonomy versus when to use structured pipelines is itself a research gap.
-
-### 3.3 Landscape Surveys and Design Guidance
-
-Two TOSEM-quality surveys map the SE agent landscape empirically. He et al. [2] synthesize 41 primary studies and propose a lifecycle taxonomy; Liu et al. [3] analyze 124 papers through a dual lens of SE-task coverage and agent architecture, identifying perception, reasoning, tool use, and inter-agent interaction as the core capability dimensions. Both surveys observe that the field is growing faster than existing reviews can capture — Liu et al.'s corpus alone spans a span of just 18 months.
-
-Cai et al. [14] complement these surveys with a practitioner-oriented contribution: a systematic derivation of **16 design patterns** for LLM-based multi-agent SE systems (e.g., Role Specialization, Debate, Blackboard), grounded in a 94-paper review and mapped to ISO 25010 quality attributes. Where He et al. and Liu et al. document *what* has been built, Cai et al. address *how to build it* — a distinction that matters as the field transitions from research prototypes to production systems.
+The transition from single to multi-agent systems is surveyed in depth by Guo et al. [4], who document the evolution through **agent profiling**, **inter-agent communication**, and **skill specialization**, identifying three principal communication topologies — layered, decentralized, and centralized. Talebirad and Nadiri [11], writing in mid-2023 when the field was nascent, represent the earliest systematic treatment of multi-agent LLM collaboration and anticipated the coordination challenges — looping, context overflow, inter-agent trust — that subsequent empirical work has confirmed. Together, these three foundational works establish that the capability gains from multi-agent decomposition come at the cost of coordination complexity.
 
 ---
 
-## 4. Challenges and Evaluation
+## 3. Main Body
 
-Despite rapid progress, the field faces critical open problems. Han et al. [10] enumerate four challenge dimensions from a systems perspective: (1) **task allocation** — matching subtasks to the most capable agent efficiently; (2) **robust reasoning** — preventing cascading errors through iterative multi-agent debate; (3) **context management** — handling layered context that grows with agent count and dialogue length; and (4) **memory** — enabling agents to maintain and retrieve long-horizon state without exceeding token budgets. These challenges are empirically observed, not hypothetical — they appear as failure modes in deployed MetaGPT, ChatDev, and AutoGen systems.
+### 3.1 Current Approaches and Methods
 
-Evaluation methodology is arguably the field's most urgent bottleneck. Yehudai et al. [12] (ACL Findings 2025) survey agent evaluation frameworks and find that benchmark coverage is shallow, metrics are often self-reported, and no community-wide evaluation standard exists. SWE-bench has emerged as the de facto benchmark for repository-level tasks, but it samples from open-source bug-fix scenarios that may not reflect enterprise software complexity. The result is a landscape in which performance claims are difficult to compare and progress is hard to verify — a problem that will grow more acute as commercial systems enter production.
+The literature clusters around four patterns for multi-agent coordination in software tasks.
+
+**Structured-document coordination** is exemplified by MetaGPT [5], which encodes SE workflows as *Standardized Operating Procedures* (SOPs). Agents hold canonical roles — product manager, architect, engineer, QA — and communicate through structured artifacts (PRDs, design docs, test reports) rather than free-form dialogue. Making intermediate products explicit reduces hallucination and role confusion. **Dialogue-based coordination** is represented by ChatDev [6], which organizes agent interaction as a *Chat Chain* of role-playing conversations between agent pairs (CEO↔CTO, programmer↔tester). Agents reach consensus through natural language rather than pre-defined schemas, demonstrating that conversational coordination can substitute for structural constraints in well-scoped tasks. **General-purpose infrastructure** is provided by AutoGen [7], a conversation-based abstraction layer in which any pair of agents can exchange messages, delegate subtasks, or invoke tools — positioning it as backbone infrastructure rather than a domain-specific application. **Iterative feedback loops** are illustrated by AgentCoder [8], which deploys a three-agent pipeline — programmer, test designer, executor — in which code is repeatedly tested and refined until all test cases pass, achieving 96.3% Pass@1 on HumanEval with GPT-4.
+
+### 3.2 Recent Advances
+
+Three developments from 2024–2025 represent the leading edge of the field. First, *Agentless* [9] challenges the prevailing assumption that more agentic complexity yields better performance. By replacing autonomous agent decision-making with a deterministic three-phase pipeline — fault localization, patch generation, patch selection — it achieves **50.80% on SWE-bench** with Claude 3.5 Sonnet, a state-of-the-art result adopted by OpenAI and DeepSeek as a standard evaluation baseline. Second, Cai et al. [14] deliver the field's first systematic catalog of **16 design patterns** for LLM-based multi-agent SE systems (e.g., Role Specialization, Debate, Blackboard), grounded in a 94-paper review and mapped to ISO 25010 quality attributes — moving the field from ad hoc design toward principled software architecture. Third, Yehudai et al. [12] produce the first dedicated survey of agent evaluation methodology, finding that no community-wide evaluation standard exists and that most published metrics are task-specific and self-reported.
+
+### 3.3 Comparative Analysis
+
+Placing these approaches side by side reveals three substantive tensions in the literature.
+
+**Structured vs. dialogue coordination.** MetaGPT and ChatDev represent opposite design philosophies. MetaGPT's SOPs impose structure that catches inconsistencies early but require upfront role schema design and limit flexibility. ChatDev's Chat Chain is more adaptive but scales poorly as conversation depth grows, accumulating context that exceeds token budgets. Neither approach dominates: MetaGPT excels on complex multi-file generation; ChatDev produces working code faster for single-feature specifications. Liu et al. [3] note this as a fundamental trade-off between reliability and flexibility across the 124-paper corpus they survey.
+
+**Autonomy vs. simplicity.** Agentless [9] directly challenges the agentic frameworks by outperforming them with no autonomy whatsoever on the SWE-bench benchmark. This is not a niche result — the gap holds across model variants. Yet the comparison is not clean: SWE-bench tests bug-fix localization, where deterministic pipelines excel; open-ended feature development, where frameworks like MetaGPT [5] and AutoGen [7] operate, is not well represented in any current benchmark. The comparison reveals more about benchmark design limitations than about which architecture is superior in general.
+
+**Benchmark coverage gaps.** HumanEval (used by AgentCoder and MetaGPT) tests isolated function generation; SWE-bench (used by Agentless) tests repository-level bug fixing. He et al. [2] map 41 primary studies across the SDLC and find that requirements engineering, architecture design, and deployment are almost entirely absent from existing benchmarks, despite being the phases where coordination overhead is highest. The field's comparative analysis is therefore conducted on a narrow slice of the SE domain.
 
 ---
 
-## 5. Conclusion and Future Directions
+## 4. Discussion
 
-The last three years have established LLM-based multi-agent software engineering as a coherent research area with genuine results: frameworks completing small software projects end-to-end, code generation approaching human-competitive benchmarks, and surveys documenting a rapidly expanding primary literature. Two paradigms — structured-document (MetaGPT) and dialogue-based (ChatDev) coordination — anchor current system design, while the Agentless result challenges the field to be more precise about when agent complexity is justified.
+The reviewed literature tells a coherent story: the field moved rapidly from single-agent code generation (2022–2023) to structured multi-agent frameworks (MetaGPT, ChatDev, AutoGen; 2023–2024) and is now questioning whether that complexity was always warranted (Agentless, 2024–2025). Two coordination paradigms — structured-document and dialogue-based — have emerged as the dominant architectural choices, with a growing recognition that design patterns [14] and principled architecture selection criteria are needed to guide practitioners. Surveys by He et al. [2] and Liu et al. [3] confirm that the primary literature is expanding faster than review coverage can keep pace.
 
-What the field lacks is equally clear. Evaluation methodology is immature; coordination challenges (task allocation, context overflow, memory) remain unsolved at scale; and the gap between benchmark performance (~50% on SWE-bench) and the fully autonomous engineering vision articulated by Hassan et al. [13] is substantial. The most pressing near-term research directions are: standardized evaluation protocols for agent systems, hybrid architectures that modulate autonomy based on task complexity, and safety and governance frameworks for agents operating with write access to production codebases [13, 12].
+Three gaps stand out. First, **evaluation standardization**: Yehudai et al. [12] and Han et al. [10] both identify the absence of agreed-upon metrics as the field's most critical bottleneck. Performance claims across frameworks are currently incommensurable. Second, **coordination at scale**: Han et al. [10] enumerate unresolved challenges — task allocation, cascading reasoning errors, context overflow, long-horizon memory — that appear as observed failure modes in deployed systems, not as hypothetical concerns. Third, **SDLC coverage**: the combination of He et al. [2] and Liu et al. [3] reveals that current agent research covers less than half the SDLC, leaving requirements elicitation, architecture, and maintenance nearly untouched.
+
+The most consequential near-term directions are: (1) standardized evaluation protocols that span SDLC phases rather than isolated coding tasks; (2) hybrid architectures that dynamically select between structured-pipeline and autonomous-agent modes based on task complexity; and (3) safety and governance frameworks for agents that operate with write access to production systems, a concern Hassan et al. [13] identify as foundational to the SASE vision.
+
+---
+
+## 5. Conclusion
+
+LLM-based multi-agent SE has evolved in three years from a research concept to a field with peer-reviewed frameworks, quantitative benchmarks, and systematic surveys. The central finding is a **complexity paradox**: architecturally simple pipelines (Agentless) match or outperform elaborate agent orchestration on current benchmarks, while complex frameworks (MetaGPT, AutoGen) address design problems that benchmarks do not yet test. The field is productive but fragmented — growing faster than its evaluation methodology can validate.
+
+This literature review establishes the conceptual and empirical foundation for subsequent capstone research on multi-agent system design for software engineering tasks. The identified gaps — particularly the absence of standardized cross-phase evaluation and the lack of principled criteria for when agent autonomy adds value — directly motivate the research questions that the capstone will pursue. Understanding what has been built and where the field's blind spots lie is a prerequisite for proposing contributions that genuinely advance the state of the art rather than reproducing existing frameworks.
 
 ---
 
