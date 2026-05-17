@@ -36,9 +36,15 @@ After the cross-check agent's filtering, a human researcher reviewed the candida
 
 With the final paper pool confirmed, a Claude session with full context of all approved papers generated a structured per-paper summary for each. Each summary captures: main contribution, methods, results, limitations, critical analysis, and a note on how the paper relates to the review. These summaries became the canonical input for all downstream writing agents, ensuring that every writing agent works from the same structured representation rather than raw abstracts of varying quality.
 
-### Stage 5 — Parallel Writing Agents (Claude)
+### Stage 5 — Parallel Writing Agents (Claude + Consensus)
 
 Separate Claude sessions, each receiving the combined paper summaries and a targeted prompt, generated individual review sections independently and in parallel. Each agent was assigned a specific section — Introduction, Background, and so on — and given a section-specific prompt that defined the rhetorical goals and structural requirements for that section. All agents were instructed to use academic prose with inline author-year citations and no bullet points or subsection headers, enforcing style consistency across independently generated outputs. Each group member was responsible for prompting and reviewing their assigned agent's section.
+
+For the Main Body section, the dual-agent pattern from Stage 1 was extended into writing: both Claude and Consensus received the same confirmed 34-paper pool and the same section-specific goals, and produced drafts independently. Claude organized its output around three themes — framework design, benchmarks and evaluation, and emerging deployment challenges — and drew citations exclusively from the confirmed pool throughout. Consensus produced a structurally similar draft but introduced approximately eight papers not in the pool across all three themes, including frameworks and benchmarks absent from the cross-validated list. Incorporating these would have required re-running earlier pipeline stages, so Claude's draft served as the primary base. Specific empirical details from Consensus were selectively incorporated where they strengthened existing claims without introducing new sources — for example, the statistic that early frontier models resolved fewer than 2% of SWE-bench issues.
+
+One concrete failure surfaced during citation verification of Claude's draft: two cited papers could not be confirmed at their provided URLs. The Preprints.org link resolved to an unrelated paper, and one IEEE Access DOI was inaccessible. Both were removed from Section 3, though one was retained in the reference list as it had already been cited in earlier sections. This illustrates a persistent limitation of writing agents: citations are generated with apparent confidence but require independent verification before use.
+
+Running two writing agents independently made implicit framing choices visible and negotiable. Each agent selected which papers to foreground and how to characterize tensions between findings; where the two drafts diverged, those divergences indicated genuine interpretive choices rather than settled consensus. In a single-agent system these choices would be invisible and fixed.
 
 ---
 
@@ -65,3 +71,7 @@ The main advantage of a single-agent approach is simplicity. There are no interm
 3. **Human gates belong at knowledge boundaries.** The human verification stage sits precisely between retrieval — where AI agents have the most variance — and writing — where the input is fixed. This placement maximizes the value of human judgment.
 
 4. **Structured summaries decouple retrieval from writing.** By inserting a summary-generation agent between the paper pool and the writing agents, each writing agent receives uniform, pre-digested input rather than raw abstracts of varying quality. This is the pipeline's most important design choice for cross-section consistency.
+
+5. **Parallel writing agents make interpretive choices visible.** When two agents draft the same section independently, their differences — which papers to foreground, how to frame conflicts between findings — surface as explicit, negotiable decisions rather than invisible defaults. The cost is requiring reconciliation; the benefit is that no single agent's framing is accepted uncritically. For sections where synthesis judgment matters most, this tradeoff is worth taking.
+
+6. **Pool discipline must be enforced at the writing stage, not assumed.** Both writing agents at Stage 5 received the same confirmed paper pool, yet one agent introduced out-of-pool sources regardless. Agents do not reliably self-constrain to a closed citation set without explicit verification. Citation outputs should be cross-checked against the confirmed pool and verified at their source URLs before the draft is accepted.
